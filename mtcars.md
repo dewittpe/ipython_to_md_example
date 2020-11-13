@@ -29,6 +29,9 @@ Read in the mtcars data set.  This was exported from R as a csv.  It's just not 
 
 ```python
 mtcars = pd.read_csv("mtcars.csv")
+
+# omit automatic transmissions
+mtcars = mtcars[mtcars['am'] == 0]
 mtcars
 ```
 
@@ -45,6 +48,6 @@ print("weight: ", (lm.coef_)[0][0])
 print("hp: ", (lm.coef_)[0][1])
 ```
 
-<!-- #region variables={"round(abs((lm.coef_)[0][0]), 2)": "3.88"} -->
+<!-- #region variables={"round(abs((lm.coef_)[0][0]), 2)": "1.86"} -->
 The average change in fuel economy for every 1000 lbs reduction in weight between to cars with equal horse power is {{round(abs((lm.coef_)[0][0]), 2)}} miles per gallon.
 <!-- #endregion -->
